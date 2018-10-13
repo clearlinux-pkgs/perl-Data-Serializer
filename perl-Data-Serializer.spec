@@ -4,15 +4,15 @@
 #
 Name     : perl-Data-Serializer
 Version  : 0.60
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-serializer-perl/libdata-serializer-perl_0.60-2.debian.tar.xz
 Summary  : Modules that serialize data structures
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
-Requires: perl-Data-Serializer-license
-Requires: perl-Data-Serializer-man
+Requires: perl-Data-Serializer-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 BuildRequires : perl-Module-Build
 
 %description
@@ -23,6 +23,15 @@ use Data::Serializer;
 
 $obj = Data::Serializer->new();
 
+%package dev
+Summary: dev components for the perl-Data-Serializer package.
+Group: Development
+Provides: perl-Data-Serializer-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-Data-Serializer package.
+
+
 %package license
 Summary: license components for the perl-Data-Serializer package.
 Group: Default
@@ -31,19 +40,11 @@ Group: Default
 license components for the perl-Data-Serializer package.
 
 
-%package man
-Summary: man components for the perl-Data-Serializer package.
-Group: Default
-
-%description man
-man components for the perl-Data-Serializer package.
-
-
 %prep
-tar -xf %{SOURCE1}
-cd ..
 %setup -q -n Data-Serializer-0.60
-mkdir -p %{_topdir}/BUILD/Data-Serializer-0.60/deblicense/
+cd ..
+%setup -q -T -D -n Data-Serializer-0.60 -b 1
+mkdir -p deblicense/
 mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Data-Serializer-0.60/deblicense/
 
 %build
@@ -68,12 +69,12 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-Data-Serializer
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-Data-Serializer/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Data-Serializer
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Serializer/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -82,32 +83,28 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Bencode.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Config/General.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Convert/Bencode.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Convert/Bencode_XS.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Cookbook.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Data/Denter.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Data/Dumper.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Data/Taxi.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/FreezeThaw.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/JSON.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/JSON/Syck.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/PHP/Serialization.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Persistent.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Raw.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/Storable.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/XML/Dumper.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/XML/Simple.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/YAML.pm
-/usr/lib/perl5/site_perl/5.26.1/Data/Serializer/YAML/Syck.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Config/General.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Convert/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Convert/Bencode_XS.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Cookbook.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Data/Denter.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Data/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Data/Taxi.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/FreezeThaw.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/JSON.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/JSON/Syck.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/PHP/Serialization.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Persistent.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Raw.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/Storable.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/XML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/XML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/YAML.pm
+/usr/lib/perl5/vendor_perl/5.26.1/Data/Serializer/YAML/Syck.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-Data-Serializer/deblicense_copyright
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Data::Serializer.3
 /usr/share/man/man3/Data::Serializer::Bencode.3
@@ -129,3 +126,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Data::Serializer::XML::Simple.3
 /usr/share/man/man3/Data::Serializer::YAML.3
 /usr/share/man/man3/Data::Serializer::YAML::Syck.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Data-Serializer/deblicense_copyright
