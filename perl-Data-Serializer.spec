@@ -83,26 +83,26 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Config/General.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Convert/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Convert/Bencode_XS.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Cookbook.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Data/Denter.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Data/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Data/Taxi.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/FreezeThaw.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/JSON.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/JSON/Syck.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/PHP/Serialization.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Persistent.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Raw.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/Storable.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/XML/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/XML/Simple.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/YAML.pm
-/usr/lib/perl5/vendor_perl/5.28.1Data/Serializer/YAML/Syck.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Config/General.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Convert/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Convert/Bencode_XS.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Cookbook.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Data/Denter.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Data/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Data/Taxi.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/FreezeThaw.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/JSON.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/JSON/Syck.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/PHP/Serialization.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Persistent.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Raw.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/Storable.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/XML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/XML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/YAML.pm
+/usr/lib/perl5/vendor_perl/5.28.1/Data/Serializer/YAML/Syck.pm
 
 %files dev
 %defattr(-,root,root,-)
