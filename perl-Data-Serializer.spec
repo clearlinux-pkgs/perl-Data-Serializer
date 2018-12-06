@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Serializer
 Version  : 0.60
-Release  : 5
+Release  : 6
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-serializer-perl/libdata-serializer-perl_0.60-2.debian.tar.xz
