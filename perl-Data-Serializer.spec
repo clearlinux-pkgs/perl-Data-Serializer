@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Serializer
 Version  : 0.60
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.60.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-serializer-perl/libdata-serializer-perl_0.60-2.debian.tar.xz
@@ -12,6 +12,9 @@ Summary  : Modules that serialize data structures
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Data-Serializer-license = %{version}-%{release}
+Requires: perl(Bencode)
+Requires: perl(Convert::Bencode)
+Requires: perl(Convert::Bencode_XS)
 BuildRequires : buildreq-cpan
 BuildRequires : perl-Module-Build
 
@@ -27,6 +30,7 @@ $obj = Data::Serializer->new();
 Summary: dev components for the perl-Data-Serializer package.
 Group: Development
 Provides: perl-Data-Serializer-devel = %{version}-%{release}
+Requires: perl-Data-Serializer = %{version}-%{release}
 
 %description dev
 dev components for the perl-Data-Serializer package.
@@ -45,13 +49,13 @@ license components for the perl-Data-Serializer package.
 cd ..
 %setup -q -T -D -n Data-Serializer-0.60 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Data-Serializer-0.60/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Data-Serializer-0.60/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -61,7 +65,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
