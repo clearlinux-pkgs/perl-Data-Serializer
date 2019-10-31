@@ -3,3 +3,7 @@
 perl(Bencode)
 perl(Convert::Bencode)
 perl(Convert::Bencode_XS)
+perl(Data::Denter)
+perl(Data::Taxi)
+perl(PHP::Serialization)
+perl(XML::Dumper)
