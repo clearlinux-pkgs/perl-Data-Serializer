@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Serializer
 Version  : 0.65
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.65.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.65.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-serializer-perl/libdata-serializer-perl_0.60-2.debian.tar.xz
@@ -24,16 +24,16 @@ BuildRequires : buildreq-cpan
 
 %description
 NAME
-Cookbook - Examples of how to use Data::Serializer
-DESCRIPTION
-Data::Serializer::Cookbook is a collection of solutions for using
-Data::Serializer.
+Data::Serializer:: - Modules that serialize data structures
+SYNOPSIS
+use Data::Serializer;
+
+$obj = Data::Serializer->new();
 
 %package dev
 Summary: dev components for the perl-Data-Serializer package.
 Group: Development
 Provides: perl-Data-Serializer-devel = %{version}-%{release}
-Requires: perl-Data-Serializer = %{version}-%{release}
 Requires: perl-Data-Serializer = %{version}-%{release}
 
 %description dev
@@ -88,7 +88,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Data-Serializer
-cp %{_builddir}/Data-Serializer-0.65/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Serializer/7f76ad22b4b668eaf9159ac6396a33fd70180bfd
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-Data-Serializer/7f76ad22b4b668eaf9159ac6396a33fd70180bfd
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -131,23 +131,23 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Config/General.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Convert/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Convert/Bencode_XS.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Cookbook.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Data/Denter.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Data/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Data/Taxi.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/FreezeThaw.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/JSON.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/JSON/Syck.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/PHP/Serialization.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Persistent.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Raw.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/Storable.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/XML/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/XML/Simple.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/YAML.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Serializer/YAML/Syck.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Config/General.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Convert/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Convert/Bencode_XS.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Cookbook.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Denter.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Taxi.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/FreezeThaw.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/JSON.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/JSON/Syck.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/PHP/Serialization.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Persistent.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Raw.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Storable.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/XML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/XML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/YAML.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/YAML/Syck.pm
