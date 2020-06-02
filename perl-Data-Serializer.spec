@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Serializer
 Version  : 0.65
-Release  : 17
+Release  : 18
 URL      : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.65.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NE/NEELY/Data-Serializer-0.65.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libd/libdata-serializer-perl/libdata-serializer-perl_0.60-2.debian.tar.xz
@@ -131,23 +131,23 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Config/General.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Convert/Bencode.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Convert/Bencode_XS.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Cookbook.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Denter.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Data/Taxi.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/FreezeThaw.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/JSON.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/JSON/Syck.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/PHP/Serialization.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Persistent.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Raw.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/Storable.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/XML/Dumper.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/XML/Simple.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/YAML.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Data/Serializer/YAML/Syck.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Config/General.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Convert/Bencode.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Convert/Bencode_XS.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Cookbook.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Data/Denter.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Data/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Data/Taxi.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/FreezeThaw.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/JSON.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/JSON/Syck.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/PHP/Serialization.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Persistent.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Raw.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/Storable.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/XML/Dumper.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/XML/Simple.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/YAML.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Data/Serializer/YAML/Syck.pm
